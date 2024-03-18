@@ -271,8 +271,8 @@ function drawMenu(){
     "########################################"
     " Q - Quit                               "                                     
     " R - Reset game                         "
-    "                                        "
-    "                                        "
+    " S - Save                               "
+    " L - Load saved game                    "
     "                                        "
     "                                        "
     "############# HOW TO PLAY ##############"
@@ -404,6 +404,34 @@ function resetGame() {
 }
 
 
+function saveGame() {
+    str=""
+    for ((x=0;x<3;x++)) do
+        for ((y=0;y<3;y++)) do
+            str=$str"${MAP[$y,$x]} "
+        done
+    done
+    echo "$str$currentTurn" > save.txt
+    
+}
+
+
+function loadGame() {
+    resetGame
+    exec 3<> ./save.txt
+    read -u 3 -a ARRAY
+    i=0
+    for ((x=0;x<3;x++)) do
+        for ((y=0;y<3;y++)) do
+            MAP[$y,$x]=${ARRAY[$i]}
+            i=$(($i+1))
+        done
+    done
+    currentTurn=${ARRAY[$i]}
+    exec 3>&-
+    drawMap
+    updateSelectedField
+}
 
 
 #########################################
@@ -490,6 +518,14 @@ while true
             ;;
         'r')
             resetGame
+            ;;
+        's')
+            saveGame
+            ;;
+        'l')
+            if [ -f ./save.txt ]; then
+                loadGame
+            fi
             ;;
         'c')
             resetGame
