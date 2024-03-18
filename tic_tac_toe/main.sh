@@ -269,11 +269,11 @@ function drawMenu(){
     "########################################"
     "################# MENU #################"
     "########################################"
-    " Q - Quit                               "                                     
-    " R - Reset game                         "
+    " Q - Quit                               "
     " S - Save                               "
     " L - Load saved game                    "
-    "                                        "
+    " C - Play against computer              "
+    " R - Reset game                         "
     "                                        "
     "############# HOW TO PLAY ##############"
     " 1. Use arrow keys to select field      "
@@ -403,7 +403,6 @@ function resetGame() {
     drawMenu
 }
 
-
 function saveGame() {
     str=""
     for ((x=0;x<3;x++)) do
@@ -433,6 +432,21 @@ function loadGame() {
     updateSelectedField
 }
 
+function moveComputer() {
+    random=$(($RANDOM%9))
+    while true; 
+    do
+        y=$(($random/3))
+        x=$(($random-$y*3))
+        if [ ${MAP[$y,$x]} -eq $empty ]; then
+            newSelectedFieldX=$x
+            newSelectedFieldY=$y
+            return
+        fi
+        random=$(($random+1))
+        random=$(($random%9))
+    done
+}
 
 #########################################
 ################ MAIN ###################
@@ -503,6 +517,23 @@ while true
                     drawXWin
                 fi
                 currentTurn=$(($currentTurn*-1))
+                if [ $winner -eq $empty ]; then
+                if [ $enemy -eq $computer ]; then
+                    moveComputer  
+                    updateSelectedField                          
+                    MAP[$selectedFieldY,$selectedFieldX]=$currentTurn          
+                    winner=$(checkWinner)
+                        
+                    if [ $winner -eq $O ]; then
+                        drawOWin
+                    fi
+                    if [ $winner -eq $X ]; then
+                        drawXWin
+                    fi
+                    currentTurn=$(($currentTurn*-1))
+
+                fi
+                fi
             fi
             ;;
         *) ;;
@@ -537,5 +568,7 @@ while true
             
     esac
 done
+
+
 
 
