@@ -259,6 +259,20 @@ function checkWinner(){
         winner=$currentTurn
         
     fi
+    if [ $winner == $empty ]; then
+        flag=0
+        for ((x=0;x<3;x++)) do
+            for ((y=0;y<3;y++)) do
+                if [ "${MAP[$x,$y]}" == "$empty" ]; then
+                    flag=1
+                fi
+            done
+        done
+        
+        if [ "$flag" == "0" ]; then
+            winner=$DRAW
+        fi
+    fi
     echo $winner
 }
 
@@ -327,7 +341,38 @@ function drawOWin() {
     done
     tput setaf 7
 }
+function drawDRAW(){
+        posY=12 
+    posX=70
+    
+    array=(
+        "                                       "
+        "                                       "
+        "                                       "
+        "                                       "
+        "                 ****                  "
+        "             **      **                "
+        "           **          **              "
+        "          **             **            "
+        "          **               **          "
+        "          **             **            "
+        "           **          **              "
+        "             **      **                "
+        "                 ****                  "
+        "                                       "
+        "                                       " 
+        "                                       "
+        "                                       "
 
+    )
+    tput setaf 3 
+    for str in "${array[@]}"; do
+        tput cup $posY $posX
+        echo "$str"
+        posY=$(($posY+1))
+    done
+    tput setaf 7
+}
 function drawXWin() {
     posY=12 
     posX=70
@@ -460,6 +505,7 @@ declare -A MAP
 empty=0
 X=1
 O=-1
+DRAW=2
 currentTurn=$O
 winner=$empty
 player=0
@@ -516,6 +562,9 @@ while true
                 if [ $winner -eq $X ]; then
                     drawXWin
                 fi
+                if [ $winner -eq $DRAW ]; then
+                    drawDRAW
+                fi
                 currentTurn=$(($currentTurn*-1))
                 if [ $winner -eq $empty ]; then
                 if [ $enemy -eq $computer ]; then
@@ -529,6 +578,9 @@ while true
                     fi
                     if [ $winner -eq $X ]; then
                         drawXWin
+                    fi
+                    if [ $winner -eq $DRAW ]; then
+                        drawDRAW
                     fi
                     currentTurn=$(($currentTurn*-1))
 
