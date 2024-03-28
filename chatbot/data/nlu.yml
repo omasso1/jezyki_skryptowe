@@ -1,0 +1,139 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - good morning
+    - good evening
+    - moin
+    - hey there
+    - let's go
+    - hey dude
+    - goodmorning
+    - goodevening
+    - good afternoon
+
+- intent: goodbye
+  examples: |
+    - cu
+    - good by
+    - cee you later
+    - good night
+    - bye
+    - goodbye
+    - have a nice day
+    - see you around
+    - bye bye
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+- intent: mood_great
+  examples: |
+    - perfect
+    - great
+    - amazing
+    - feeling like a king
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I am amazing
+    - I am going to save the world
+    - super stoked
+    - extremely good
+    - so so perfect
+    - so good
+    - so perfect
+
+- intent: mood_unhappy
+  examples: |
+    - my day was horrible
+    - I am sad
+    - I don't feel very well
+    - I am disappointed
+    - super sad
+    - I'm so sad
+    - sad
+    - very sad
+    - unhappy
+    - not good
+    - not very good
+    - extremly sad
+    - so saad
+    - so sad
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?
+
+- intent: restaurant_open_time
+  examples: |
+    - Is restaurant open on [Tuesday](day_of_the_week)?
+    - What are the opening hours for the restaurant on [Mondays](day_of_the_week)?
+    - Could you please tell me the operating hours of the restaurant for [Tuesdays](day_of_the_week)?
+    - What time does the restaurant start serving on [Saturdays](day_of_the_week)?
+    - Do you have information about the restaurant's hours of operation on [Sundays](day_of_the_week)?
+    - Could you let me know when the restaurant closes on [Fridays](day_of_the_week)?
+    - When can I expect the restaurant to be open on [Thursdays](day_of_the_week)?
+    - What are [Monday](day_of_the_week)'s hours?
+    - What are [Tuesday](day_of_the_week)'s hours?
+    - When does [Saturday](day_of_the_week) service begin?
+    - What about [Sundays](day_of_the_week)?
+    - When does it close [Friday](day_of_the_week)s?
+    - [Thursday](day_of_the_week) hours?
+
+- intent: ask_for_menu
+  examples: |
+    - What dishes do you have on your menu?
+    - Could you tell me about the options on your menu?
+    - What are your specialties?
+    - What drinks do you serve?
+    - Do you have any soups available?
+    - List the menu, please
+    - Show me the menu, please
+
+- intent: order_meal
+  examples: |
+    -  I'd like to order the [grilled salmon](meal_name), please.
+    -  Could I get the [vegetarian lasagna](meal_name), please?
+    -  May I have a [Caesar salad](meal_name) [with grilled chicken](additional_info), please?
+    -  I'll have the [ribeye steak](meal_name), [medium-rare](additional_info), please.
+    -  Can I get a [margherita pizza](meal_name) [with no cheese](additional_info), please?
+    -  Can I get a [margherita pizza](meal_name) [with extra cheese](additional_info), please?
+    -  Can I get a [margherita pizza](meal_name) [with no cheese](additional_info), please?
+    -  Can I get a [margherita pizza](meal_name) [without extra cheese](additional_info), please?
+    -  I'd like to try the [seafood linguine](meal_name), please.
+    -  May I order the [chicken tikka masala](meal_name), please?
+    -  I'll take the [classic burger](meal_name) [with fries](additional_info), please.
+    -  I'll take the [classic burger](meal_name) [with no fries](additional_info), please.
+    -  I'll take the [classic burger](meal_name) [with more fries](additional_info), please.
+    -  I'll take the [classic burger](meal_name) [without fries](additional_info), please.
+    -  Can I get a side of [garlic mashed potatoes](meal_name), please?
+    -  I'd like to try the [sushi](meal_name) platter, please.
+    -  Could I have a glass of [red wine](meal_name), please?
+    -  May I order a [chocolate lava cake](meal_name) for dessert, please?
+    -  I'll have the [shrimp scampi](meal_name), please.
+    -  Can I get a bowl of [minestrone soup](meal_name) to start, please?

@@ -1,0 +1,15 @@
+'mondays'
+Expecting value: line 33 column 3 (char 549)
+Expecting value: line 33 column 3 (char 549)
+string indices must be integers
+Lasagne
+Pizza
+Hot-dog
+Burger
+Spagetti Carbonara
+Tiramisu
+'NoneType' object is not subscriptable
+'monday'
+'NoneType' object is not subscriptable
+'NoneType' object is not subscriptable
+'NoneType' object is not subscriptable

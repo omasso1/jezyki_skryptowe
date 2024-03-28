@@ -1,0 +1,12 @@
+{
+ "items": 
+    {
+      "monday": {"open":"8:00","close":"20:00" },
+      "tuesday": {"open":"8:00","close":"20:00" },
+      "wednesday": {"open":"10:00","close":"16:00" },
+      "thursday": {"open":"8:00","close":"20:00" },
+      "friday": {"open":"8:00","close":"20:00" },
+      "saturday": {"open":"10:00","close":"16:00" },
+      "sunday": {"open":"0:00","close":"0:00" }
+    }  
+}
