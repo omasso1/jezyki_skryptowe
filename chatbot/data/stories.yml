@@ -2,30 +2,6 @@ version: "3.1"
 
 stories:
 
-- story: ask for opening hours
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: restaurant_open_time
-  - action: action_opening_hours
-
-- story: ask for menu list
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: ask_for_menu
-  - action: action_list_menu
-
-- story: ask for menu list
-  steps:
-  - intent: greet
-  - action: utter_greet
-  - intent: ask_for_menu
-  - action: action_list_menu
-  - intent: order_meal
-  - action: action_order_meal
-  
-
 - story: sad path 2
   steps:
   - intent: greet
@@ -35,5 +11,3 @@ stories:
   - action: utter_did_that_help
   - intent: deny
   - action: utter_goodbye
-
-

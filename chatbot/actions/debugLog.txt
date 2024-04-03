@@ -1,15 +1,83 @@
-'mondays'
-Expecting value: line 33 column 3 (char 549)
-Expecting value: line 33 column 3 (char 549)
-string indices must be integers
-Lasagne
-Pizza
-Hot-dog
-Burger
-Spagetti Carbonara
-Tiramisu
-'NoneType' object is not subscriptable
-'monday'
-'NoneType' object is not subscriptable
-'NoneType' object is not subscriptable
-'NoneType' object is not subscriptable
+Ordering meal
+1:00:00
+Ordering meal
+'Lasagna'
+Ordering meal
+1:00:00
+Ordering meal
+1:00:00
+Ordering meal
+1:00:00
+Ordering meal
+1:00:00
+Ordering meal
+'pizza'
+Ordering meal
+0:30:00
+Ordering meal
+1:00:00
+Ordering meal
+0:30:00
+Ordering meal
+0:30:00
+Ordering meal
+0:12:00
+Ordering meal
+Ordering meal
+1:00:00
+Ordering meal
+0:06:00
+Ordering meal
+0:06:00
+Ordering meal
+0:30:00
+Ordering meal
+Ordering meal
+Ordering meal
+0:30:00
+Ordering meal
+0:30:00
+Ordering meal
+0:30:00
+Ordering meal
+0:30:00
+Ordering meal
+0:30:00
+Ordering meal
+0:30:00
+Ordering meal
+0:30:00
+Ordering meal
+0:30:00
+Ordering meal
+0:30:00
+Ordering meal
+0:06:00
+Ordering meal
+0:30:00
+Ordering meal
+meal_name
+meal_name
+additional_info
+0:06:00
+Ordering meal
+meal_name meal_name
+meal_name additional_info
+additional_info additional_info
+0:06:00
+Ordering meal
+meal_name meal_name
+meal_name additional_info
+additional_info additional_info
+0:06:00
+Ordering meal
+meal_name meal_name
+meal_name additional_info
+additional_info additional_info
+0:30:00
+day_of_the_week day_of_the_week
+Ordering meal
+meal_name meal_name
+meal_name additional_info
+additional_info additional_info
+0:30:00

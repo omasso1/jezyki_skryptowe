@@ -11,3 +11,30 @@ rules:
   steps:
   - intent: bot_challenge
   - action: utter_iamabot
+
+- rule: say hi
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- rule: ask for opening hours
+  steps:
+  - intent: restaurant_open_time
+  - action: action_opening_hours
+
+- rule: ask for menu list
+  steps:
+  - intent: ask_for_menu
+  - action: action_list_menu
+
+
+- rule: order meal
+  steps:
+  - intent: order_meal
+  - action: action_order_meal
+ 
+
+- rule: check ordered meal
+  steps:
+  - intent: ask_for_orders
+  - action: action_get_order

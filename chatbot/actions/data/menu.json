@@ -1,25 +1,25 @@
 {
-    "Lasagne": {
+    "lasagne": {
         "price": 16,
         "preparation_time": 1
     },
-    "Pizza": {
+    "pizza": {
         "price": 12,
         "preparation_time": 0.5
     },
-    "Hot-dog":{
+    "hot-dog":{
         "price": 4,
         "preparation_time": 0.1
     },
-    "Burger":{
+    "burger":{
         "price": 12.5,
         "preparation_time": 0.2
     },
-    "Spagetti Carbonara":{
+    "spagetti carbonara":{
         "price": 15,
         "preparation_time": 0.5
     },
-    "Tiramisu":{
+    "tiramisu":{
         "price": 11,
         "preparation_time": 0.15
     }

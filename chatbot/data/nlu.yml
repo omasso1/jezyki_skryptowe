@@ -1,5 +1,4 @@
 version: "3.1"
-
 nlu:
 - intent: greet
   examples: |
@@ -15,7 +14,6 @@ nlu:
     - goodmorning
     - goodevening
     - good afternoon
-
 - intent: goodbye
   examples: |
     - cu
@@ -28,7 +26,6 @@ nlu:
     - see you around
     - bye bye
     - see you later
-
 - intent: affirm
   examples: |
     - yes
@@ -37,7 +34,6 @@ nlu:
     - of course
     - that sounds good
     - correct
-
 - intent: deny
   examples: |
     - no
@@ -47,7 +43,6 @@ nlu:
     - don't like that
     - no way
     - not really
-
 - intent: mood_great
   examples: |
     - perfect
@@ -64,7 +59,6 @@ nlu:
     - so so perfect
     - so good
     - so perfect
-
 - intent: mood_unhappy
   examples: |
     - my day was horrible
@@ -81,14 +75,12 @@ nlu:
     - extremly sad
     - so saad
     - so sad
-
 - intent: bot_challenge
   examples: |
     - are you a bot?
     - are you a human?
     - am I talking to a bot?
     - am I talking to a human?
-
 - intent: restaurant_open_time
   examples: |
     - Is restaurant open on [Tuesday](day_of_the_week)?
@@ -104,7 +96,6 @@ nlu:
     - What about [Sundays](day_of_the_week)?
     - When does it close [Friday](day_of_the_week)s?
     - [Thursday](day_of_the_week) hours?
-
 - intent: ask_for_menu
   examples: |
     - What dishes do you have on your menu?
@@ -114,26 +105,42 @@ nlu:
     - Do you have any soups available?
     - List the menu, please
     - Show me the menu, please
-
 - intent: order_meal
   examples: |
-    -  I'd like to order the [grilled salmon](meal_name), please.
-    -  Could I get the [vegetarian lasagna](meal_name), please?
-    -  May I have a [Caesar salad](meal_name) [with grilled chicken](additional_info), please?
-    -  I'll have the [ribeye steak](meal_name), [medium-rare](additional_info), please.
-    -  Can I get a [margherita pizza](meal_name) [with no cheese](additional_info), please?
-    -  Can I get a [margherita pizza](meal_name) [with extra cheese](additional_info), please?
-    -  Can I get a [margherita pizza](meal_name) [with no cheese](additional_info), please?
-    -  Can I get a [margherita pizza](meal_name) [without extra cheese](additional_info), please?
-    -  I'd like to try the [seafood linguine](meal_name), please.
-    -  May I order the [chicken tikka masala](meal_name), please?
-    -  I'll take the [classic burger](meal_name) [with fries](additional_info), please.
-    -  I'll take the [classic burger](meal_name) [with no fries](additional_info), please.
-    -  I'll take the [classic burger](meal_name) [with more fries](additional_info), please.
-    -  I'll take the [classic burger](meal_name) [without fries](additional_info), please.
-    -  Can I get a side of [garlic mashed potatoes](meal_name), please?
-    -  I'd like to try the [sushi](meal_name) platter, please.
-    -  Could I have a glass of [red wine](meal_name), please?
-    -  May I order a [chocolate lava cake](meal_name) for dessert, please?
-    -  I'll have the [shrimp scampi](meal_name), please.
-    -  Can I get a bowl of [minestrone soup](meal_name) to start, please?
+    - I'd like to order the [grilled salmon](meal_name), please.
+    - Could I get the [vegetarian lasagna](meal_name), please?
+    - May I have a [Caesar salad](meal_name) [with grilled chicken](additional_info), please?
+    - I'll have the [ribeye steak](meal_name), [medium-rare](additional_info), please.
+    - Can I get a [margherita pizza](meal_name) [with no cheese](additional_info), please?
+    - Can I get a [margherita pizza](meal_name) [with extra cheese](additional_info), please?
+    - Can I get a [margherita pizza](meal_name) [without extra cheese](additional_info), please?
+    - I'd like to try the [seafood linguine](meal_name), please.
+    - May I order the [chicken tikka masala](meal_name), please?
+    - I'll take the [classic burger](meal_name) [with fries](additional_info), please.
+    - I'll take the [classic burger](meal_name) [with no fries](additional_info), please.
+    - I'll take the [classic burger](meal_name) [with more fries](additional_info), please.
+    - I'll take the [classic burger](meal_name) [without fries](additional_info), please.
+    - Can I get a side of [garlic mashed potatoes](meal_name), please?
+    - I'd like to try the [sushi](meal_name) platter, please.
+    - Could I have a glass of [red wine](meal_name), please?
+    - May I order a [chocolate lava cake](meal_name) for dessert, please?
+    - I'll have the [shrimp scampi](meal_name), please.
+    - Can I get a bowl of [minestrone soup](meal_name) to start, please?
+    - I would like to order [pizza](meal_name) [with extra cheese](additional_info)
+    - I want to order [burger](meal_name) [without sauce](additional_info)
+    - I want [hot-dog](meal_name) [with ketchup](additional_info)
+    - I would like to buy [lasagne](meal_name)
+    - I want [hot-dog](meal_name) [with ketchup](additional_info)
+    - I would like to buy [hot-dog](meal_name) [without ketchup](additional_info)
+    - I would like to buy [pizza](meal_name) [with salami](additional_info)
+    - order [spagetti carbonara](meal name) [with extra ketchup](additional_info)
+    - order [extra large](additional_info) [spagetti carbonara](meal name)
+- intent: ask_for_orders
+  examples: |
+    - Can you show me my orders?
+    - What are my orders?
+    - When my order will be ready?
+    - When can I pick up my order?
+    - When can I come for my food?
+    - How long will it take?
+    - Will it take long?

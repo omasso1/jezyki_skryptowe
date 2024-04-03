@@ -1,53 +1,40 @@
-version: "3.1"
-
+version: '3.1'
 intents:
-  - greet
-  - goodbye
-  - affirm
-  - deny
-  - mood_great
-  - mood_unhappy
-  - bot_challenge
-  - restaurant_open_time
-  - ask_for_menu
-  - order_meal
-
+- affirm
+- ask_for_menu
+- ask_for_orders
+- bot_challenge
+- deny
+- goodbye
+- greet
+- mood_great
+- mood_unhappy
+- order_meal
+- restaurant_open_time
 actions:
-  - action_opening_hours
-  - action_list_menu
-  - action_order_meal
-
+- action_order_meal
+- action_opening_hours
+- action_list_menu
+- action_get_order
 responses:
   utter_greet:
-  - text: "Hey! How can I help you?"
-
+  - text: Hey! How can I help you?
   utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
-
+  - text: 'Here is something to cheer you up:'
+    image: https://i.imgur.com/nGF1K8f.jpg
   utter_did_that_help:
-  - text: "Did that help you?"
-
+  - text: Did that help you?
   utter_happy:
-  - text: "Great, carry on!"
-
+  - text: Great, carry on!
   utter_goodbye:
-  - text: "Bye"
-
+  - text: Bye
   utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
-
+  - text: I am a bot, powered by Rasa.
 entities:
-  - day_of_the_week
-  - meal_name
-  - additional_info
-  # slots:
-  #   slot_time:
-  #     type: text
-  #     mappings:
-  #       type: from_entity
-  #       entity: day_of_the_week
-
+- additional_info
+- meal_name
+- meal name
+- day_of_the_week
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
