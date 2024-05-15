@@ -22,6 +22,8 @@ let stars;
 let health = 4;
 const TILE_WIDTH = 40;
 const TILE_HEIGHT = TILE_WIDTH;
+let enemies = [];
+
 
 function preload ()
 {
@@ -29,6 +31,7 @@ function preload ()
     this.load.image('ground', './assets/ground.png');
     this.load.text('map', './assets/map.txt');
     this.load.image('star', './assets/star.png');
+    this.load.image('enemy', './assets/enemy.png');
     document.getElementById("WIN_TEXT").style.display = "none";
     document.getElementById("LOSE_TEXT").style.display = "none";
     document.getElementById("life").innerText = health;
@@ -61,7 +64,7 @@ function create ()
     this.physics.add.collider(stars, ground);
     this.physics.add.overlap(player.body, stars, collectStar, null, this);
 
-    loadLevel(this.cache.text.get('map'));
+    loadLevel(this.cache.text.get('map'), this);
 }
 
 
@@ -69,7 +72,7 @@ const ON_GROUND = 0;
 const IN_AIR = 1;
 let maxScore = 0;
 
-function loadLevel(mapText){
+function loadLevel(mapText, game){
     const lines = mapText.trim().split('\n');
     for(let i=0; i< lines.length; i++){
         const columns = lines[i].trim()
@@ -84,11 +87,48 @@ function loadLevel(mapText){
             }else if (columns[j] == 4){
                 stars.create(j * TILE_WIDTH, i * TILE_HEIGHT,'star')
                 maxScore += 1;
+            }else if(columns[j] == 5){
+                addEnemy(j * TILE_WIDTH, i * TILE_HEIGHT + 1, game);
             }
                 
         }
     }
     document.getElementById("maxScore").innerText = maxScore;
+}
+
+function playerEnemyCollision(player_, enemy) {
+    if (player_.body.y < enemy.y && player_.body.velocity.y > 0) {
+        enemy.disableBody(true, true);
+    }else{
+        health-= 1;
+        document.getElementById("life").innerText = health;
+        if (health <= 0){
+            console.log("lost");
+            document.getElementById("LOSE_TEXT").style.display = "block";
+            destroy();
+        }else{      
+            player.resetPosition();
+        }
+    }
+    
+}
+
+function enemyHitWall(enemy, wall) {
+    if (enemy.x < wall.x && enemy.body.touching.right) {
+        enemy.setVelocityX(-100); 
+    } else if (enemy.x > wall.x && enemy.body.touching.left) {
+        enemy.setVelocityX(100); 
+    }
+}
+
+
+function addEnemy(x, y, game){
+    enemy = game.physics.add.sprite(x, y, 'enemy');
+    game.physics.add.collider(player.body, enemy, playerEnemyCollision);
+    game.physics.add.collider(enemy, ground, enemyHitWall);
+
+    enemy.setVelocityX(-100);
+    enemies.push(enemy);
 }
 
 class Player{
