@@ -17,6 +17,16 @@ Kod: tick_tac_toe
 
 :white_check_mark: wymaganie 4, 4.5  [Link do commita 2](https://github.com/omasso1/jezyki_skryptowe/commit/151b2b4d7710528578039739d756970113a4bf50)
 
-
-
 Kod: chatbot
+
+**Zadanie 3**  Mario JS
+
+
+:white_check_mark: wymaganie 3, 3.5  [Link do commita 1](https://github.com/omasso1/jezyki_skryptowe/commit/d516fd4ce3e5ec66e432fa282d35ce931e876309)
+
+:white_check_mark: wymaganie 4, 4.5  [Link do commita 2](https://github.com/omasso1/jezyki_skryptowe/commit/43669302944aadee494edf978ac609437859c6d5)
+
+Kod: JS: Mario w PhaserJS
+
+
+
