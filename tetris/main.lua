@@ -1,4 +1,9 @@
+-- main.lua
 local pieces = require "pieces"
+
+local moveCooldown = 0.1
+local rotateCooldown = 0.2
+local fallCooldown = 0.5
 
 function love.load()
     love.window.setMode(400, 600)
@@ -17,6 +22,9 @@ function resetGame()
 
     score = 0
     gameOver = false
+    moveTimer = 0
+    rotateTimer = 0
+    fallTimer = 0
     spawnPiece()
 end
 
@@ -87,29 +95,36 @@ function love.update(dt)
         return
     end
 
-    if love.keyboard.isDown("left") and canPlacePiece(currentPiece.shape, currentPiece.x - 1, currentPiece.y) then
+    moveTimer = moveTimer - dt
+    rotateTimer = rotateTimer - dt
+    fallTimer = fallTimer - dt
+
+    if love.keyboard.isDown("left") and moveTimer <= 0 and canPlacePiece(currentPiece.shape, currentPiece.x - 1, currentPiece.y) then
         currentPiece.x = currentPiece.x - 1
-    elseif love.keyboard.isDown("right") and canPlacePiece(currentPiece.shape, currentPiece.x + 1, currentPiece.y) then
+        moveTimer = moveCooldown
+    elseif love.keyboard.isDown("right") and moveTimer <= 0 and canPlacePiece(currentPiece.shape, currentPiece.x + 1, currentPiece.y) then
         currentPiece.x = currentPiece.x + 1
-    elseif love.keyboard.isDown("down") and canPlacePiece(currentPiece.shape, currentPiece.x, currentPiece.y + 1) then
+        moveTimer = moveCooldown
+    elseif love.keyboard.isDown("down") and moveTimer <= 0 and canPlacePiece(currentPiece.shape, currentPiece.x, currentPiece.y + 1) then
         currentPiece.y = currentPiece.y + 1
+        moveTimer = moveCooldown
     end
 
-    local now = love.timer.getTime()
-    if now - (currentPiece.lastFall or 0) > 0.5 then
+    if fallTimer <= 0 then
         if canPlacePiece(currentPiece.shape, currentPiece.x, currentPiece.y + 1) then
             currentPiece.y = currentPiece.y + 1
         else
             placePiece()
         end
-        currentPiece.lastFall = now
+        fallTimer = fallCooldown
     end
 
-    if love.keyboard.isDown("space") then
+    if love.keyboard.isDown("space") and rotateTimer <= 0 then
         local newShape = pieces.rotatePiece(currentPiece.shape)
         if canPlacePiece(newShape, currentPiece.x, currentPiece.y) then
             currentPiece.shape = newShape
         end
+        rotateTimer = rotateCooldown
     end
 end
 
