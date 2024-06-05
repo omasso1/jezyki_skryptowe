@@ -29,4 +29,23 @@ Kod: chatbot
 Kod: JS: Mario w PhaserJS
 
 
+**Zadanie 4**  Tetris LUA
+
+
+:white_check_mark: wymaganie 3, 3.5, 4  [Link do commita 1](https://github.com/omasso1/jezyki_skryptowe/commit/4d7e2f41fa5605be4daa3f1673e7d7e787aed689)
+
+
+Kod: Tetris w Lua
+
+
+**Zadanie 4**  Mario w Ruby2d
+
+
+:white_check_mark: wymaganie 3  [Link do commita 1](https://github.com/omasso1/jezyki_skryptowe/commit/aeae5a45a08c41b1ef4d992e483f4fb536515e4e)
+
+
+Kod: Mario w Ruby2d
+
+
+
 
