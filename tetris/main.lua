@@ -287,6 +287,8 @@ function love.draw()
     love.graphics.line(TileSize * COLS, 0, TileSize * COLS, TileSize * ROWS)
     love.graphics.setColor(1, 1, 1)
     love.graphics.print("Score: " .. Score, TileSize * COLS + 10, 30)
+    love.graphics.print("S - Save game" , TileSize * COLS + 10, 30 + TileSize)
+    love.graphics.print("R - Load game" , TileSize * COLS + 10, 30 + TileSize * 2)
     if GameOver then
         love.graphics.print("Game Over", 150, 300)
     end
